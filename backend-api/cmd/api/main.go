@@ -22,11 +22,13 @@ const (
 	chatCompletionUrl    = "https://api.openai.com/v1/chat/completions"
 	ragMsgTemplate       = "Kontext: {{.RagContext}}\nNachricht: {{.Message}}"
 	similarDocumentCount = 7
+	systemMessageContent = `Help the user find answers to 
+	their developer-specific questions. Please relate your answer or recommendations to parts of the dora specification.`
 )
 
 var systemMessage = message{
 	Role:    "system",
-	Content: "Answer the questions in the language they were asked and help the user find answers to their developer-specific questions. Refer all questions to the DORA context and try to provide as concrete advice as possible.",
+	Content: systemMessageContent,
 }
 
 type message struct {
