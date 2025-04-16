@@ -78,6 +78,13 @@ func (s *server) proxyHandler(w http.ResponseWriter, r *http.Request) {
 
 	slog.InfoContext(ctx, "received requestData")
 
+	actualAuthorizationHeader := r.Header.Get("Authorization")
+	expectedAuthorizationHeader := fmt.Sprintf("Bearer %s", os.Getenv("API_KEY"))
+	if actualAuthorizationHeader != expectedAuthorizationHeader {
+		http.Error(w, "Unauthorized", http.StatusUnauthorized)
+		return
+	}
+
 	reqData, err := io.ReadAll(r.Body)
 	if err != nil {
 		http.Error(w, "failed to read requestData body", http.StatusBadRequest)
