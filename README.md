@@ -2,7 +2,7 @@
 
 For the implementation, my primary goal was to get the use case running as simply as possible and then iterate from there. Thus, I prioritized leveraging existing components instead of developing too much from scratch. It's always satisfying when you piece things together, and they just work seamlessly.
 
-![Architecture of the DORA for Devs Chatbot](./architecture.jpg)
+![Architecture of the DORA for Devs Chatbot](./docs/images/architecture.jpg)
 
 ### Frontend with ChatGPT Minimal
 

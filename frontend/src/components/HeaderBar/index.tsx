@@ -23,7 +23,7 @@ const HeaderBar = () => {
           <span className={styles.right}>
             <Link
               className={styles.action}
-              href="https://github.com/blrchen/chatgpt-minimal"
+              href="https://github.com/jkblume/dora-for-devs"
               target="_blank"
             >
               <GithubOutlined />
